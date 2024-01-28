@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form</title>
+<script src="login-validation.js"></script> </head>
+<body>
+  <form id="login-form">
+    <h2>Login</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    const loginForm = document.getElementById("login-form");
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent form submission
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  // Basic validation
+  if (username === "" || password === "") {
+    alert("Please fill in both fields.");
+    return;
+  }
+
+  // More specific validation (example)
+  if (username !== "admin" || password !== "password123") {
+    alert("Invalid username or password.");
+    return;
+  }
+
+  // Successful login (replace with your actual logic)
+  alert("Login successful!");
+});
+
+  </script>
+</body>
+</html>
